@@ -1,0 +1,41 @@
+{
+  "name": "profile",
+  "count": 1,
+  "apiTemplate": "create-profile",
+  "nextNode": [
+    {
+      "name": "account",
+      "count": 1,
+      "apiTemplate": "create-profile",
+      "dependsOn" : [
+        {
+          "source" : "profile",
+          "property": "profileId"
+        }
+      ]
+    },
+    {
+      "name": "service",
+      "count": 1,
+      "apiTemplate": "create-profile",
+      "dependsOn" : [
+        {
+          "source" : "profile",
+          "property": "profileId"
+        },
+        {
+          "source" : "account",
+          "property": "accountId"
+        }
+      ],
+      "nextNode": [
+        {
+          "name": "subscription",
+          "count": 1,
+          "apiTemplate": "create-profile",
+          "nextNode": null
+        }
+      ]
+    }
+  ]
+}

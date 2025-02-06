@@ -1,0 +1,14 @@
+// fec file for profile api
+
+-- metadata
+name : create-profile
+url : cbs-canvas-vil-in-cmp-int-vilcmp-dev-01.ocplab.6d.local/cbs-profile-svc
+method : POST
+
+-- body
+
+{
+"profileId" : "{{profileId}}",
+"profileName" : "{{$r-name}}"
+"currentTime" : "{{$d-now-DDMMYY}}"
+}
