@@ -3,27 +3,29 @@ package in.samintejas.v3.util;
 import in.samintejas.v3.ApiNode;
 import in.samintejas.v3.Flow;
 import in.samintejas.v3.RestAPI;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public class FlowPrinter {
 
-    private static final String INDENT = "    "; // 4 spaces for each level
+    private static final String INDENT = "    ";
 
     public static void printFlow(Flow flow) {
         if (flow == null || flow.getRoot() == null) {
-            System.out.println("Empty flow");
+            log.warn("Flow or root node in the flow is empty , please check flow config");
             return;
         }
 
-        System.out.println("Flow tree:");
-        System.out.println("===================");
+        log.info("Flow tree:");
+        log.info("===================");
         printNode(flow.getRoot(), 0);
 
         // Print global dependency context if present
         if (flow.getGlobalDependencyContext() != null && !flow.getGlobalDependencyContext().isEmpty()) {
-            System.out.println("\nGlobal Dependencies:");
-            System.out.println("===================");
+            log.info("\nGlobal Dependencies:");
+            log.info("===================");
             flow.getGlobalDependencyContext().forEach((key, value) ->
-                    System.out.println(INDENT + key + " -> " + value));
+                    log.info(INDENT + key + " -> " + value));
         }
     }
 
@@ -32,15 +34,15 @@ public class FlowPrinter {
         String indent = INDENT.repeat(depth);
 
         // Print node details
-        System.out.println(indent + "├── Node: " + node.getName());
+        log.info(indent + "├── Node: " + node.getName());
 
         // Print REST API details if present
         if (node.getRestAPI() != null) {
             RestAPI api = node.getRestAPI();
-            System.out.println(indent + "│   ├── API Name: " + api.getName());
-            System.out.println(indent + "│   ├── URL: " + api.getUrl());
-            System.out.println(indent + "│   ├── Method: " + api.getMethod());
-            System.out.println(indent + "*   └── Count: " + node.getCount());
+            log.info(indent + "│   ├── API Name: " + api.getName());
+            log.info(indent + "│   ├── URL: " + api.getUrl());
+            log.info(indent + "│   ├── Method: " + api.getMethod());
+            log.info(indent + "*   └── Count: " + node.getCount());
 
         }
 

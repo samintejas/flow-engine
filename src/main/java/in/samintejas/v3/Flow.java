@@ -7,6 +7,7 @@ import java.util.Map;
 @Data
 public class Flow {
 
+    private String name;
     private ApiNode root;
     private Map<String,String> globalDependencyContext;
 

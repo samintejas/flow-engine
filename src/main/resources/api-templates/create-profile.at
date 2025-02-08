@@ -8,7 +8,10 @@ method : POST
 -- body
 
 {
-"profileId" : "{{profileId}}",
-"profileName" : "{{$r-name}}"
+"name" : "samin",
+"profileName" : "{{$r-name}}",
+"address": {
+    "id":"abdc"
+},
 "currentTime" : "{{$d-now-DDMMYY}}"
 }
