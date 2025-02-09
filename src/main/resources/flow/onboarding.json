@@ -1,16 +1,16 @@
 {
   "name": "profile",
-  "count": 1,
+  "count": 10,
   "apiTemplate": "create-profile",
   "nextNode": [
     {
       "name": "account",
-      "count": 1,
+      "count": 10,
       "apiTemplate": "create-account",
       "nextNode" : [
         {
           "name": "service",
-          "count": 1,
+          "count": 100,
           "apiTemplate": "create-service",
           "dependsOn" : [
             {
@@ -25,7 +25,7 @@
           "nextNode": [
             {
               "name": "subscription",
-              "count": 1,
+              "count": 4,
               "apiTemplate": "create-plan",
               "dependsOn" : [
                 {
