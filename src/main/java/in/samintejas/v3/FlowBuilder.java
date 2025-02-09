@@ -26,6 +26,7 @@ public class FlowBuilder {
         ApiNode apiNode = new ApiNode();
         apiNode.setName(fedData.getName());
         apiNode.setCount(fedData.getCount());
+        apiNode.setDependsOn(fedData.getDependsOn());
         String file = "/home/samin/repo/samintejas.in/flow-engine/src/main/resources/api-templates/" + fedData.getApiTemplate() + ".at";
         ATData fecData = ATParser.parseFromFile(file);
         RestAPI api = new RestAPI(

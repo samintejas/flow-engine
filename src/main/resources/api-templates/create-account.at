@@ -1,0 +1,51 @@
+-- metadata
+name : account
+url : cbs-canvas-vil-in-cmp-int-vilcmp-dev-01.ocplab.6d.local/cbs-account-svc
+method : POST
+
+-- body
+
+{
+    "autoDebit": 0,
+    "accountType": "1",
+    "accountId": "123124",
+    "bankAccountName1": "abc12",
+    "bankAccountNo1": "125465492",
+    "bankID1": "1313134",
+    "billcycleId": 19,
+    "billingRegion": "1231232",
+    "chargingPattern": "2",
+    "contactEmailId": "123452",
+    "creditLimit": "2132451",
+    "dispatchMode": 0,
+    "dunningExclusion": 0,
+    "dunningId1": 9,
+    "itemizedBillRequired1": true,
+    "languageId": 0,
+    "majorSicCode": 0,
+    "name": "samin",
+    "excelFileFlag": 0,
+    "notificationAllowed": 0,
+    "preferredCurrency": "USD",
+    "profileId": {{profileId}},
+    "prefId": 1,
+    "riskcategoryId1": 8,
+    "sicCode": 0,
+    "smsNumbers": "32112",
+    "status": 0,
+    "taxCode": 1,
+    "taxExemptionCode": 0,
+    "title": "Mr",
+    "unicodeName": "23121",
+    "billFromStateCode": "KL",
+    "billToStateCode": "KL",
+    "circleId": 200,
+    "entityId": 100,
+    "gstCustomerType": 1000,
+    "gstNumber": "3813AHIPI2451",
+    "gstRegistrationType": 991,
+    "pos": "KA",
+    "irnEnable": "1",
+    "writeOffFlag": 0,
+    "largeCustomerType": "M2M"
+}

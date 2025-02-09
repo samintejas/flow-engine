@@ -1,0 +1,49 @@
+-- metadata
+name : plan
+url : cbs-canvas-vil-in-cmp-int-vilcmp-dev-01.ocplab.6d.local/cbs-account-svc
+method : POST
+
+-- body
+
+{
+    "accountId": "{{accountId}}",
+    "serviceId": "{{serviceId}}",
+    "subscriptions": [
+        {
+            "planId": "18",
+            "planName": "add on",
+            "planDesc": "add on",
+            "planType": "0",
+            "upcVersion": "8",
+            "activationDate": "2022-01-01T20:12:31.719Z",
+            "ocsSubscriptionId": "3456258563",
+            "autoRenewalFlag": 1,
+            "chargeFromFlag": 2,
+            "faxMsisdn": "1900001994",
+            "charges": [
+                {
+                    "upcChargeName": "Preepaid BP",
+                    "upcChargeId": "15",
+                    "chargeRecurranceType": "1",
+                    "chargeCategory": "2",
+                    "chargeFrequency": "0",
+                    "quantity": "1",
+                    "rate": "1200.0",
+                    "amount": "1200.0",
+                    "chargeVersion": "1",
+                    "chargeStartDate": "2022-01-13T07:00:43.894Z",
+                    "chargeEndDate": "2045-11-01T07:00:43.894Z",
+                    "prorationFlag": "0000",
+                    "prorataEnabled": false,
+                    "chargeDesc": "Preepaid BP",
+                    "chargeType": 2,
+                    "chargeFactor": "0",
+                    "chargeCode": "5000",
+                    "overridden":"0"
+                }
+            ],
+            "createDate": "2023-01-25T21:08:57.824Z",
+            "status": "1"
+        }
+    ]
+}

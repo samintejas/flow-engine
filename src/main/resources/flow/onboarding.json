@@ -5,34 +5,54 @@
   "nextNode": [
     {
       "name": "account",
-      "count": 3,
-      "apiTemplate": "create-profile",
+      "count": 1,
+      "apiTemplate": "create-account",
       "nextNode" : [
         {
           "name": "service",
-          "count": 2,
-          "apiTemplate": "create-profile",
+          "count": 1,
+          "apiTemplate": "create-service",
           "dependsOn" : [
-            {
-              "source" : "profile",
-              "property": "profileId"
-            },
             {
               "source" : "account",
               "property": "accountId"
+            },
+            {
+              "source" : "profile",
+              "property": "profileId"
             }
           ],
           "nextNode": [
             {
               "name": "subscription",
               "count": 1,
-              "apiTemplate": "create-profile",
+              "apiTemplate": "create-plan",
+              "dependsOn" : [
+                {
+                  "source" : "service",
+                  "property": "serviceId"
+                },
+                {
+                  "source" : "account",
+                  "property": "accountId"
+                }
+              ],
               "nextNode": null
             },
             {
               "name": "lifecycleChange",
               "count": 1,
-              "apiTemplate": "create-profile",
+              "apiTemplate": "change-lifecycle",
+              "dependsOn" : [
+                {
+                  "source" : "service",
+                  "property": "serviceId"
+                },
+                {
+                  "source" : "service",
+                  "property": "serviceSeqId"
+                }
+              ],
               "nextNode": null
             }
           ]
@@ -41,7 +61,7 @@
       "dependsOn" : [
         {
           "source" : "profile",
-          "property": "address.id"
+          "property": "profileId"
         }
       ]
     }

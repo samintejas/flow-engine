@@ -1,0 +1,46 @@
+-- metadata
+name : service
+url : cbs-canvas-vil-in-cmp-int-vilcmp-dev-01.ocplab.6d.local/cbs-account-svc
+method : POST
+
+-- body
+
+{
+    "name": "GSMService1",
+    "chargingPattern": "1",
+    "serviceType1": "GSM1",
+    "networkServiceId": "1",
+    "iccId": "32132100011",
+    "imsiNumber": "12312932913000823199",
+    "addresses": [
+        {
+            "addressType": "1",
+            "addrLine1": "cfg v",
+            "addrLine2": "cgvh",
+            "addrLine3": "",
+            "addrLine4": "",
+            "addrLine5": "",
+            "addrLine6": "",
+            "addrLine7": "",
+            "addrLine8": "",
+            "addrLine9": "",
+            "addrLine10": "",
+            "addrLine11": "",
+            "languageId": "1",
+            "companyName": "6D",
+            "branch": ""
+        }
+    ],
+    "profileId": {{profileId}},
+    "accountId": "{{accountId}}",
+    "serviceId": "12312312",
+    "serviceSeqId": "56736723",
+    "notificationAllowed": 0,
+    "languageId": 0,
+    "entityId":"100",
+    "activationDate": "2022-05-15T20:12:31.719Z",
+    "createDate": "2022-05-15T20:12:31.719Z",
+    "status": "0",
+    "circleId": 100,
+    "opportunityId": "OPID123"
+}

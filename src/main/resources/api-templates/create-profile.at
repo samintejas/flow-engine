@@ -1,17 +1,84 @@
 // fec file for profile api
 
+// {
+// "name" : "samin",
+// "profileName" : "{{$r-name}}",
+// "address": {
+//     "id":"abdc"
+// },
+// "currentTime" : "{{$d-now-DDMMYY}}"
+// }
+
 -- metadata
-name : create-profile
+name : profile
 url : cbs-canvas-vil-in-cmp-int-vilcmp-dev-01.ocplab.6d.local/cbs-profile-svc
 method : POST
 
 -- body
 
 {
-"name" : "samin",
-"profileName" : "{{$r-name}}",
-"address": {
-    "id":"abdc"
-},
-"currentTime" : "{{$d-now-DDMMYY}}"
+    "accountType": "Manadfi",
+    "corporateClass": "{{$r-name}} corporate class",
+    "eCode": "68549647953",
+    "profileId": "123",
+    "corporateName": "{{$r-name}} Corporates",
+    "corporateParentGrp": "{{$r-name}} group",
+    "costCenter": "{{$r-name}} Cost Centers",
+    "panNumber": "10011",
+    "industryType": "250012801",
+    "noOfEmp": "0",
+    "annTurnover": "0",
+    "billingAvg": "",
+    "entityId": "100",
+    "largeAccountCode": "M2M",
+    "customerType": "1",
+    "largeCustomerNameID": "{{$r-name}} pvt Ltd",
+    "firstName": "{{$r-name}}",
+    "circleAccountManager": "Samin",
+    "altContactNumber": "9878465467",
+    "contactEmailId": "test@gmail.com",
+    "occupation": "Manager",
+    "isiSafe": "1",
+    "dealers": "{{$r-name}} Technology",
+    "nameType": "Full",
+    "custUniqueCode": "S-ATMPLAS3091-1RET00",
+    "contactMedium": [
+        {
+            "preferred": false,
+            "mediumType": "address",
+            "characteristic": {
+                "contactType": "permanentAddress",
+                "ward": "SF 315/1F,JEYAPRAKASH NAGAR,GANAPATHY,COIMBATORE-641006",
+                "city": "SF 315/1F,JEYAPRAKASH NAGAR,GANAPATHY",
+                "region": "COIMBATORE",
+                "stateOrProvince": "18",
+                "district": "19",
+                "poBoxNumber": "21679"
+            }
+        }
+    ],
+    "languageAbility": [
+        {
+            "languageCode": "1",
+            "languageName": "English"
+        }
+    ],
+    "partyCharacteristic": [
+        {
+            "name": "profileType",
+            "value": "1"
+        },
+        {
+            "name": "subscriberCategory",
+            "value": "2"
+        },
+        {
+            "name": "subscriberSubCategory",
+            "value": "2"
+        },
+        {
+            "name": "accountType",
+            "value": "SME"
+        }
+    ]
 }

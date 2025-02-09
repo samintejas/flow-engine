@@ -10,17 +10,26 @@ public class ApiExecutor {
 
 
     private final RestAPI restAPI;
-    private final Map<String,String> context;
+    private final ExecutionContext context;
 
-    public ApiExecutor(RestAPI restAPI, Map<String, String> context) {
+    public ApiExecutor(RestAPI restAPI, ExecutionContext context) {
         this.restAPI = restAPI;
         this.context = context;
     }
 
 
-    public Map<String,String> execute(){
-        restAPI.buildEmptyPlaceholderMap();
-        log.info(restAPI.generateNewRequest(context));
-        return new HashMap<>();
+    public ExecutionContext execute(){
+
+        Map<String,String> emptyContext = restAPI.buildEmptyPlaceholderMap();
+        Map<String,String> passedCtx = context.getContext();
+        log.debug("fields required by the template : {}",emptyContext);
+        log.debug("passed in fields from context : {}",passedCtx);
+        emptyContext.forEach((ctx,val) -> {
+            if(passedCtx.get(ctx) != null) {
+                emptyContext.put(ctx,passedCtx.get(ctx));
+            }
+        });
+        context.getResponse().put(restAPI.getName(),restAPI.generateNewRequest(emptyContext));
+        return context;
     }
 }

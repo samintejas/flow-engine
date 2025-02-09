@@ -1,0 +1,29 @@
+-- metadata
+name : plan
+url : cbs-canvas-vil-in-cmp-int-vilcmp-dev-01.ocplab.6d.local/cbs-account-svc
+method : POST
+
+-- body
+
+{
+    "action": "UpdateServiceState",
+    "changeStatus": {
+      "executionDate": "2022-09-26T10:59:49.897Z",
+      "meName": "string",
+      "newStatus": 1,
+      "reasonCode": "30",
+      "remarks": "string",
+      "serviceId": "{{serviceId}}",
+      "serviceSeqId": "{{serviceSeqId}}",
+      "source": "string",
+      "status": 0
+    },
+    "channelId": "2331",
+    "entityId": "100",
+    "requestId": "1232",
+    "requestTimestamp": "2022-09-26T10:59:49.897Z",
+    "sessionId": "string",
+    "transactionId": "sdfsd",
+    "userId": "string",
+    "userName": "string"
+  }
